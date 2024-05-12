@@ -19,7 +19,11 @@ cd kafka-challange
 # Download the test data
 wget https://tda-public.s3.eu-central-1.amazonaws.com/hire-challenge/stream.jsonl.gz
 
+#build kafka
 docker-compose build
+
+#build consumer
+docker build -t consumer .
 ```
 ## Run
 
@@ -36,7 +40,7 @@ zcat gz/stream.jsonl.gz | kafka-console-producer.sh --broker-list localhost:9092
 # New terminal
 
 # Consume the test data
-docker-compose up consumer
+docker run --network kafka-challange_kafka-netw -it consumer
 ```
 
 ## Features
