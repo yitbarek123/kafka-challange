@@ -57,15 +57,16 @@ try:
         if is_difference_exceeds_one_minute(start_time, int(json.loads(msg.value().decode('utf-8'))['ts'])):
             print("The difference between the timestamps exceeds 1 minute.")
             minute_cnt+=1
-            print("minute: ", minute_cnt)
-            print("unique uid", len(list(dict.fromkeys(unique_id))))
+            result={}
+            result["minute"]=minute_cnt
+            result["unique_ids"]=len(list(dict.fromkeys(unique_id)))
+            print(result)
             unique_id=[]
             start_time=int(json.loads(msg.value().decode('utf-8'))['ts'])
 
         else:
             unique_id.append(json.loads(msg.value().decode('utf-8'))['uid'])
-            #list(dict.fromkeys(unique_id))
-            #print('Received message: {}'.format(msg.value().decode('utf-8')))
+        time.sleep(4)
 
 except KeyboardInterrupt:
     pass
