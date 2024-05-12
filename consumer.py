@@ -1,6 +1,7 @@
 from confluent_kafka import Consumer, KafkaError,KafkaException
 import datetime
 import json
+import time
 # Kafka broker configuration
 bootstrap_servers = 'kafka:9092'  # Use service name as hostname
 
