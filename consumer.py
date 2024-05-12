@@ -67,7 +67,7 @@ try:
 
         else:
             unique_id.append(json.loads(msg.value().decode('utf-8'))['uid'])
-        time.sleep(4)
+        #time.sleep(4)
 
 except KeyboardInterrupt:
     pass
