@@ -6,6 +6,7 @@ This project simulates producing data and consuming it in a publish-subscribe ma
 - [Build](#Build)
 - [Run](#Run)
 - [Features](#Features)
+- [Sugestions](#Sugestions)
 
 
 ## Build
@@ -45,3 +46,6 @@ docker run --network kafka-challange_kafka-netw -it consumer
 
 ## Features
 The execution of the consumer container count minutes, starting from the first time-stamp and prints number of unique Ids for each minute.
+
+## TODO
+To achieve better performance, additional workers can be added in pipeline mode to parallelize the overall workload. Furthermore, replacing JSON with Protocol Buffers (protobuf) and using gRPC can improve performance by up to 10 times.
