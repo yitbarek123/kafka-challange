@@ -67,7 +67,8 @@ try:
             start_time=int(json.loads(msg.value().decode('utf-8'))['ts'])
 
         else:
-            unique_id.append(json.loads(msg.value().decode('utf-8'))['uid'])
+            if json.loads(msg.value().decode('utf-8'))['uid'] not in unique_id: 
+                unique_id.append(json.loads(msg.value().decode('utf-8'))['uid'])
         #time.sleep(4)
 
 except KeyboardInterrupt:
