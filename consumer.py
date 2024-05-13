@@ -56,6 +56,7 @@ try:
             minute_cnt+=1
         # Check if the difference exceeds 1 minute
         if is_difference_exceeds_one_minute(start_time, int(json.loads(msg.value().decode('utf-8'))['ts'])):
+            unique_id.append(json.loads(msg.value().decode('utf-8'))['uid'])
             print("The difference between the timestamps exceeds 1 minute.")
             minute_cnt+=1
             result={}
